@@ -6,9 +6,9 @@ export const StyledNotes = styled.ol`
   & li {
     /* padding: 0.25em 0; */
     color: #282828;
-    font-family: "Courier New", Courier, monospace;
+    /* font-family: "Courier New", Courier, monospace; */
     font-family: "Baskerville";
-    /* font-size: 1.2rem; */
+    font-size: 1rem;
   }
   & li::before {
     font-weight: 600;

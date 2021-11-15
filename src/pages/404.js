@@ -1,8 +1,10 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import { navigate } from "gatsby";
 
 const NotFoundPage = () => {
-  return <main>Nothing Here!</main>;
+  navigate("/");
+
+  return <></>;
 };
 
 export default NotFoundPage;

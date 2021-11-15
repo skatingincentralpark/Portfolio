@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "gatsby";
 
 import { StyledHeader, DesktopNav, MobileNav, Logo } from "./Header.styled";
 import { Button } from "../styles/sharedStyles/Button.styled";

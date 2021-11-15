@@ -5,7 +5,12 @@ import { StyledNotes } from "./Notes.styled";
 
 const NotesPage = () => {
   return (
-    <Container>
+    <Container
+      data-sal="fade"
+      data-sal-duration="1500"
+      data-sal-delay="0"
+      data-sal-easing="ease"
+    >
       <StyledNotes>
         <li>
           Our greatest glory is not in never failing, but in rising up every

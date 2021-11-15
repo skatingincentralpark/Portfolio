@@ -1,24 +1,48 @@
 import React from "react";
+import { graphql } from "gatsby";
 
 import PortfolioItem from "../components/portfolio/PortfolioItem";
 import { Container } from "../components/styles/sharedStyles/Container.styled";
 
-const PortfolioPage = () => {
-  const project1 = {
-    title: "Goriot",
-    category: "E-Commerce",
-    description:
-      "People at the Cherry Festival in Traverse City rushed to keep this carnival. Feel free to ask anything about the journey. Not going to lie, it was a hard slog.",
-    techStack: "Gatsby (React), Graphql, Shopify",
-  };
+const PortfolioPage = (props) => {
+  const delay = [150, 300, 450];
+
+  const {
+    data: {
+      projects: { edges },
+    },
+  } = props;
 
   return (
     <Container>
-      <PortfolioItem project={project1} />
-      <PortfolioItem project={project1} />
-      <PortfolioItem project={project1} />
+      {edges.map((project) => (
+        <PortfolioItem project={project.node.frontmatter} />
+      ))}
     </Container>
   );
 };
+
+export const query = graphql`
+  query PortfolioQuery {
+    projects: allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            category
+            description
+            techStack
+            title
+            url
+            image {
+              childImageSharp {
+                gatsbyImageData(placeholder: NONE, formats: [AUTO, WEBP, AVIF])
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default PortfolioPage;

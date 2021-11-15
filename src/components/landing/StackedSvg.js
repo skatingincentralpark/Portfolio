@@ -8,7 +8,12 @@ import { StyledStackedSvg } from "./StackedSvg.styled";
 
 const StackedSvg = () => {
   return (
-    <StyledStackedSvg>
+    <StyledStackedSvg
+      data-sal="fade"
+      data-sal-duration="1500"
+      data-sal-delay="0"
+      data-sal-easing="ease"
+    >
       <Bone1 />
       <Bone2 />
       <Bone3 />

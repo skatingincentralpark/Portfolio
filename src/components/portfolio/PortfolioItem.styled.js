@@ -6,10 +6,11 @@ export const StyledPortfolioItem = styled(FlexSpaceBetween)`
   gap: 1rem;
   justify-content: start;
   align-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3.5rem;
 
   @media (min-width: ${({ theme }) => theme.mobile}) {
     gap: 2rem;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -36,6 +37,10 @@ export const StyledImage = styled.div`
 export const ItemDetails = styled.div`
   width: 100%;
   margin-right: 0;
+
+  & h2 {
+    margin: 0.5em 0;
+  }
 
   & small:nth-child(2) {
     color: gray;
