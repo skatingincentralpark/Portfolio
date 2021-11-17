@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
   }
   html {
     font-size: 13px;
+    overflow-y: scroll;
   }
   body {
     background: white;
@@ -19,6 +20,9 @@ const GlobalStyles = createGlobalStyle`
   p {
     opacity: 0.6;
     line-height: 1.5;
+  }
+  small {
+    font-size: 0.8rem;
   }
   img {
     max-width: 100%;

@@ -2,15 +2,11 @@ import styled from "styled-components";
 
 export const StyledHeader = styled.header`
   background: ${({ open }) => (open ? "chartreuse" : "white")};
-  border-bottom: 1px solid black;
-  border-color: ${({ open }) => (open ? "forestgreen" : "white")};
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: ${({ open }) => (open ? "calc(3.5rem + 30vh)" : "3rem")};
   transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
-  overflow: hidden;
   z-index: 98;
 
   @media (min-width: ${({ theme }) => theme.mobile}) {
@@ -32,11 +28,15 @@ export const DesktopNav = styled.nav`
 `;
 
 export const MobileNav = styled.nav`
-  position: absolute;
-  top: 2.5rem;
+  position: fixed;
+  transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-110%)")};
   z-index: 97;
   height: 30vh;
   width: 100%;
+  padding-bottom: 1.5rem;
+
+  background: ${({ open }) => (open ? "chartreuse" : "white")};
+
   opacity: ${({ open }) => (open ? "1" : "0")};
   transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
 
@@ -54,7 +54,6 @@ export const MobileNav = styled.nav`
   }
 
   & div div:last-child * {
-    /* padding: 0 0 0 1rem; */
     display: inline;
   }
 

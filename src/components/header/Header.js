@@ -18,24 +18,26 @@ const Header = () => {
   };
 
   return (
-    <StyledHeader open={showNav}>
-      <FlexSpaceBetween row>
-        <Logo>
-          <StyledLink onClick={hideNavHandler} to="/">
-            <b>Naked Lunch </b>
-            <span>- Design and Code by Charles Zhao</span>
-          </StyledLink>
-        </Logo>
-        <DesktopNav>
-          <Navlink onClick={hideNavHandler} to="/portfolio">
-            Portfolio
-          </Navlink>
-          <Navlink onClick={hideNavHandler} to="/about">
-            About
-          </Navlink>
-        </DesktopNav>
-        <Button onClick={showNavHandler}>Menu</Button>
-      </FlexSpaceBetween>
+    <>
+      <StyledHeader open={showNav}>
+        <FlexSpaceBetween row>
+          <Logo>
+            <StyledLink onClick={hideNavHandler} to="/">
+              <b>Naked Lunch </b>
+              <span>- Design and Code by Charles Zhao</span>
+            </StyledLink>
+          </Logo>
+          <DesktopNav>
+            <Navlink onClick={hideNavHandler} to="/portfolio">
+              Portfolio
+            </Navlink>
+            <Navlink onClick={hideNavHandler} to="/about">
+              About
+            </Navlink>
+          </DesktopNav>
+          <Button onClick={showNavHandler}>Menu</Button>
+        </FlexSpaceBetween>
+      </StyledHeader>
       <MobileNav open={showNav}>
         <FlexSpaceBetween>
           <div>
@@ -52,7 +54,7 @@ const Header = () => {
           </div>
         </FlexSpaceBetween>
       </MobileNav>
-    </StyledHeader>
+    </>
   );
 };
 

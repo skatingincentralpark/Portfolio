@@ -5,7 +5,7 @@ import PortfolioItem from "../components/portfolio/PortfolioItem";
 import { Container } from "../components/styles/sharedStyles/Container.styled";
 
 const PortfolioPage = (props) => {
-  const delay = [150, 300, 450];
+  // const delay = [150, 300, 450];
 
   const {
     data: {
@@ -15,8 +15,8 @@ const PortfolioPage = (props) => {
 
   return (
     <Container>
-      {edges.map((project) => (
-        <PortfolioItem project={project.node.frontmatter} />
+      {edges.map(({ node: { frontmatter } }, i) => (
+        <PortfolioItem key={i} project={frontmatter} />
       ))}
     </Container>
   );
@@ -34,6 +34,11 @@ export const query = graphql`
             title
             url
             image {
+              childImageSharp {
+                gatsbyImageData(placeholder: NONE, formats: [AUTO, WEBP, AVIF])
+              }
+            }
+            image2 {
               childImageSharp {
                 gatsbyImageData(placeholder: NONE, formats: [AUTO, WEBP, AVIF])
               }

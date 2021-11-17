@@ -17,3 +17,22 @@ export const Button = styled.button`
     background: chartreuse;
   }
 `;
+
+export const PlainButton = styled.button`
+  display: block;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  transition: 0.5s;
+  border-radius: 6px;
+  cursor: pointer;
+  color: gray;
+
+  &:active {
+    transform: scale(0.97);
+    color: chartreuse;
+    transition: 0.1s;
+    background: chartreuse;
+  }
+`;
