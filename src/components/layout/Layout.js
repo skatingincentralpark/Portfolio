@@ -7,6 +7,7 @@ import Header from "../header/Header";
 const theme = {
   font: {
     main: "Helvetica, Courier New, monospace",
+    serif: "Baskerville",
     mono: "Courier New, monospace",
   },
   colors: {

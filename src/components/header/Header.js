@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 
-import { StyledHeader, DesktopNav, MobileNav, Logo } from "./Header.styled";
+import {
+  StyledHeader,
+  DesktopNav,
+  MobileNav,
+  Logo,
+  Circle,
+} from "./Header.styled";
 import { Button } from "../styles/sharedStyles/Button.styled";
 import { StyledLink } from "../styles/sharedStyles/Link.styled";
 import { FlexSpaceBetween } from "../styles/sharedStyles/Flex.styled";
@@ -20,10 +26,10 @@ const Header = () => {
   return (
     <>
       <StyledHeader open={showNav}>
-        <FlexSpaceBetween row>
+        <FlexSpaceBetween row alignItemsCenter>
           <Logo>
             <StyledLink onClick={hideNavHandler} to="/">
-              <b>Naked Lunch </b>
+              <span>Naked Lunch </span>
               <span>- Design and Code by Charles Zhao</span>
             </StyledLink>
           </Logo>
@@ -35,7 +41,9 @@ const Header = () => {
               About
             </Navlink>
           </DesktopNav>
-          <Button onClick={showNavHandler}>Menu</Button>
+          <Button onClick={showNavHandler}>
+            <Circle />
+          </Button>
         </FlexSpaceBetween>
       </StyledHeader>
       <MobileNav open={showNav}>

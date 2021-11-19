@@ -5,8 +5,24 @@ export const StyledPortfolioItem = styled(FlexSpaceBetween)`
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: start;
-  align-content: center;
+  align-items: ${(props) => (props.accOpen ? "center" : "center")};
   margin-bottom: 3.5rem;
+
+  & a,
+  & button {
+    transition: 1s;
+    :hover {
+      opacity: 0.7;
+      transition: 0.25s;
+
+      h2 {
+        opacity: 0.5;
+      }
+      button {
+        opacity: 0.5;
+      }
+    }
+  }
 
   @media (min-width: ${({ theme }) => theme.mobile}) {
     gap: 2rem;
@@ -38,9 +54,9 @@ export const StyledImage = styled.div`
   border: 1px dashed gray;
   transition: 0.1s;
 
-  &:hover {
+  /* &:hover {
     border-color: black;
-  }
+  } */
 
   & img {
     width: 100%;
@@ -56,17 +72,18 @@ export const ItemDetails = styled.div`
   margin-right: 0;
 
   & h2 {
-    margin: 0.5em 0;
+    font-weight: 400;
+    border-radius: 4px;
   }
-
   & small:nth-child(2) {
     color: gray;
   }
-
+  & small {
+    font-family: ${({ theme }) => theme.font.mono};
+  }
   & img {
     width: 100%;
   }
-
   & button {
     margin-bottom: 1em;
   }
@@ -78,7 +95,7 @@ export const ItemDetails = styled.div`
 
 export const AccordionItem = styled.div`
   overflow: hidden;
-  color: gray;
+
   height: ${({ accOpen }) => (!!accOpen ? "100%" : "0")};
 
   & p:first-child {
@@ -88,8 +105,7 @@ export const AccordionItem = styled.div`
 
 export const GradientText = styled.small`
   padding: 0.25rem 0.5rem;
-  border-radius: 1em;
-  font-style: italic;
+  border-radius: 4px;
   background: linear-gradient(90deg, #b7ff04, #c9fded);
   background-size: 400% 400%;
   animation: AnimationName 2s ease infinite;

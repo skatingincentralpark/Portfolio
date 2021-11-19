@@ -20,6 +20,26 @@ export const StyledLink = styled(Link)`
   }
 `;
 
+export const StyledLinkNoPadding = styled(Link)`
+  transition: 0.4s;
+  display: block;
+  padding: 0rem;
+  margin: 0rem;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline;
+  text-decoration: underline;
+
+  &:active {
+    transition: 0s;
+    transform: scale(0.95);
+    color: ${({ color }) => (color ? color : "chartreuse")};
+    background: ${({ color }) => (color ? color : "chartreuse")};
+  }
+`;
+
 // Props => accepts "color" for active color and background
 export const StyledNavLink = styled.div`
   & a {

@@ -72,11 +72,25 @@ export const Image = styled.img`
 `;
 
 export const Logo = styled.div`
-  & span {
+  & span:nth-child(1) {
+    font-family: ${({ theme }) => theme.font.mono};
+  }
+  & span:nth-child(2) {
     display: none;
 
     @media (min-width: ${({ theme }) => theme.mobile}) {
       display: inline;
     }
+  }
+`;
+
+export const Circle = styled.div`
+  height: 1.5rem;
+  width: 1.5rem;
+  background: black;
+  border-radius: 50%;
+
+  &:active {
+    background: white;
   }
 `;

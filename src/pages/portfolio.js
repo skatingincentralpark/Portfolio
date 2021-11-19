@@ -15,8 +15,8 @@ const PortfolioPage = (props) => {
 
   return (
     <Container>
-      {edges.map(({ node: { frontmatter } }, i) => (
-        <PortfolioItem key={i} project={frontmatter} />
+      {edges.map(({ node: { frontmatter, html } }, i) => (
+        <PortfolioItem key={i} frontmatter={frontmatter} html={html} />
       ))}
     </Container>
   );
@@ -24,7 +24,9 @@ const PortfolioPage = (props) => {
 
 export const query = graphql`
   query PortfolioQuery {
-    projects: allMarkdownRemark {
+    projects: allMarkdownRemark(
+      sort: { fields: frontmatter___order, order: ASC }
+    ) {
       edges {
         node {
           frontmatter {
@@ -44,6 +46,7 @@ export const query = graphql`
               }
             }
           }
+          html
         }
       }
     }

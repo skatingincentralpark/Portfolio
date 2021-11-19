@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
   }
   body {
     background: white;
-    font-family: ${({ theme }) => theme.font.main};
+    font-family: ${({ theme }) => theme.font.serif};
     padding-top: 3rem;
     margin: 0;
   }
@@ -18,8 +18,14 @@ const GlobalStyles = createGlobalStyle`
   background: chartreuse;
   }
   p {
-    opacity: 0.6;
     line-height: 1.5;
+  }
+  h2 {
+    margin: 0;
+  }
+  button {
+    font-family: ${({ theme }) => theme.font.serif};
+    font-size: 13px;
   }
   small {
     font-size: 0.8rem;
