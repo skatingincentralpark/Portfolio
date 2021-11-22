@@ -9,8 +9,7 @@ export const StyledLink = styled(Link)`
   background: none;
   border: none;
   border-radius: 6px;
-  cursor: pointer;
-  /* background: ${(props) => !!props.isCurrent && "black"}; */
+  cursor: alias;
 
   &:active {
     transition: 0s;
@@ -28,7 +27,7 @@ export const StyledLinkNoPadding = styled(Link)`
   background: none;
   border: none;
   border-radius: 6px;
-  cursor: pointer;
+  cursor: alias;
   display: inline;
   text-decoration: underline;
 
@@ -50,7 +49,7 @@ export const StyledNavLink = styled.div`
     background: none;
     border: none;
     border-radius: 6px;
-    cursor: pointer;
+    cursor: alias;
 
     &:active {
       transition: 0s;
@@ -61,4 +60,15 @@ export const StyledNavLink = styled.div`
   }
 `;
 
-export const StyledAnchor = styled.a``;
+export const StyledAnchor = styled.a`
+  text-decoration: underline;
+  border-radius: 6px;
+  cursor: alias;
+
+  &:active {
+    transition: 0s;
+    transform: scale(0.95);
+    color: ${({ color }) => (color ? color : "chartreuse")};
+    background: ${({ color }) => (color ? color : "chartreuse")};
+  }
+`;

@@ -29,8 +29,8 @@ const Header = () => {
         <FlexSpaceBetween row alignItemsCenter>
           <Logo>
             <StyledLink onClick={hideNavHandler} to="/">
-              <span>Naked Lunch </span>
-              <span>- Design and Code by Charles Zhao</span>
+              <span>Naked Lunch</span>
+              <span> - Design and Code by Charles Zhao</span>
             </StyledLink>
           </Logo>
           <DesktopNav>

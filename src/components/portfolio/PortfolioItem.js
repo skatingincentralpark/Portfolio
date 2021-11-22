@@ -18,41 +18,40 @@ const PortfolioItem = ({ frontmatter, delay, html }) => {
 
   const toggleAccordionHandler = () => {
     setAccOpen(!accOpen);
-    console.log(accOpen);
   };
 
   return (
-    <StyledPortfolioItem
-      row
+    <div
       data-sal="fade"
       data-sal-duration="1000" // changes duration of the animation (from 200 to 2000 ms)
       data-sal-delay={delay} // adds delay to the animation (from 5 to 1000 ms)
       data-sal-easing="ease" // sets easing for the animation (see easings.net for reference)
-      accOpen={accOpen}
     >
-      <a href={frontmatter.url} target="_blank" rel="noreferrer">
-        <StyledImage>
-          <GatsbyImage image={image} alt="Project thumbnail" />
-        </StyledImage>
-      </a>
-      <ItemDetails>
-        <FlexSpaceBetween row alignItemsCenter>
-          <StyledAnchor href={frontmatter.url} target="_blank" rel="noreferrer">
-            <h2>{frontmatter.title}</h2>
-          </StyledAnchor>
-          <small>{frontmatter.category}</small>
-        </FlexSpaceBetween>
-        <p>{frontmatter.description}</p>
-        <AccordionItem
-          accOpen={accOpen}
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-        <PlainButton onClick={toggleAccordionHandler}>
-          {accOpen ? "See Less..." : "See More..."}
-        </PlainButton>
-        <GradientText>{frontmatter.techStack}</GradientText>
-      </ItemDetails>
-    </StyledPortfolioItem>
+      <StyledPortfolioItem row accOpen={accOpen}>
+        <a href={frontmatter.url} target="_blank" rel="noreferrer">
+          <StyledImage>
+            <GatsbyImage image={image} alt="Project thumbnail" />
+          </StyledImage>
+        </a>
+        <ItemDetails>
+          <FlexSpaceBetween row alignItemsCenter>
+            <a href={frontmatter.url} target="_blank" rel="noreferrer">
+              <h2>{frontmatter.title}</h2>
+            </a>
+            <small>{frontmatter.category}</small>
+          </FlexSpaceBetween>
+          <p>{frontmatter.description}</p>
+          <AccordionItem
+            accOpen={accOpen}
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+          <PlainButton onClick={toggleAccordionHandler}>
+            {accOpen ? "See Less..." : "See More..."}
+          </PlainButton>
+          <GradientText>{frontmatter.techStack}</GradientText>
+        </ItemDetails>
+      </StyledPortfolioItem>
+    </div>
   );
 };
 

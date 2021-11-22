@@ -47,5 +47,17 @@ module.exports = {
         //   exitEventName: "sal:out", // Exit event name
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Naked Lunch`,
+        short_name: `Naked Lunch`,
+        start_url: `/`,
+        background_color: `white`,
+        theme_color: `black`,
+        display: `standalone`,
+        icon: `src/assets/images/favicon/favicon.png`,
+      },
+    },
   ],
 };

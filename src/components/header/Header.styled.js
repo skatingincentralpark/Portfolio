@@ -73,9 +73,16 @@ export const Image = styled.img`
 
 export const Logo = styled.div`
   & span:nth-child(1) {
-    font-family: ${({ theme }) => theme.font.mono};
+    font-family: ${({ theme }) => theme.font.serif};
+    font-weight: 400;
+    border-radius: 6px;
+
+    @media (min-width: ${({ theme }) => theme.mobile}) {
+      font-weight: 600;
+    }
   }
   & span:nth-child(2) {
+    font-family: ${({ theme }) => theme.font.mono};
     display: none;
 
     @media (min-width: ${({ theme }) => theme.mobile}) {
