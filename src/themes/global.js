@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
   }
   body {
     background: white;
-    font-family: ${({ theme }) => theme.font.serif};
+    font-family: ${({ theme }) => theme.font.main};
     padding-top: 3rem;
     margin: 0;
   }
@@ -24,7 +24,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
   }
   button {
-    font-family: ${({ theme }) => theme.font.serif};
+    font-family: ${({ theme }) => theme.font.main};
     font-size: 13px;
   }
   small {

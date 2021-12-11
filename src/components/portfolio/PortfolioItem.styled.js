@@ -82,7 +82,7 @@ export const ItemDetails = styled.div`
 
   & h2 {
     border-radius: 4px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 400;
   }
   & p {

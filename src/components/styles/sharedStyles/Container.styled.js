@@ -12,6 +12,10 @@ export const AboutContainer = styled.div`
   text-align: right;
   margin-left: 10rem;
 
+  a {
+    line-height: 1.5;
+  }
+
   @media (min-width: ${({ theme }) => theme.mobile}) {
     margin-left: auto;
     width: 40vw;

@@ -73,7 +73,7 @@ export const Image = styled.img`
 
 export const Logo = styled.div`
   & span:nth-child(1) {
-    font-family: ${({ theme }) => theme.font.serif};
+    font-family: ${({ theme }) => theme.font.main};
     font-weight: 400;
     border-radius: 6px;
 
