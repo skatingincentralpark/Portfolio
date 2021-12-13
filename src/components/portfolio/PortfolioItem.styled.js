@@ -68,7 +68,7 @@ export const StyledImage = styled.div`
 
   & img {
     width: 100%;
-    background: #b7ff04;
+    background: #bfbfbf;
   }
 
   @media (min-width: ${({ theme }) => theme.mobile}) {
@@ -120,7 +120,10 @@ export const AccordionItem = styled.div`
 export const GradientText = styled.small`
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
-  background: linear-gradient(90deg, #b7ff04, #c9fded);
+  /* background: linear-gradient(90deg, #b7ff04, #c9fded); */
+  background: ${({ theme }) => theme.colors.main};
+  background: #eeeeee;
+  color: black;
   background-size: 400% 400%;
   animation: AnimationName 2s ease infinite;
 

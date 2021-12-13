@@ -7,6 +7,7 @@ export default {
     header: "#ebfbff",
     body: "#fff",
     footer: "#003333",
+    main: "#eeeeee",
   },
   mobile: "768px",
 };

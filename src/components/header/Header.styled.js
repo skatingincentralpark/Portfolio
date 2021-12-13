@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
-  background: ${({ open }) => (open ? "chartreuse" : "white")};
+  background: ${({ open }) => (open ? "#eeeeee" : "white")};
   position: fixed;
   top: 0;
   left: 0;
@@ -35,7 +35,8 @@ export const MobileNav = styled.nav`
   width: 100%;
   padding-bottom: 1.5rem;
 
-  background: ${({ open }) => (open ? "chartreuse" : "white")};
+  background: ${({ open }) => (open ? "#eeeeee" : "white")};
+  border-bottom: 1px solid #fffff;
 
   opacity: ${({ open }) => (open ? "1" : "0")};
   transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
