@@ -1,85 +1,67 @@
-import * as React from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
+import { useLocation } from "@reach/router";
+
 import seoimage from "../../assets/images/seo.png";
 
-function Seo({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-            siteUrl
-          }
+export default function Seo({
+  title = "",
+  description = "",
+  pathname = "",
+  children = null,
+}) {
+  const location = useLocation();
+  const {
+    site: { siteMetadata },
+  } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          siteTitle
+          siteTitleDefault
+          siteUrl
+          hrefLang
+          siteDescription
         }
       }
-    `
-  );
+    }
+  `);
 
-  const metaDescription = description || site.siteMetadata.description;
-  const defaultTitle = site.siteMetadata?.title;
-  const image = `${site.siteMetadata?.siteUrl}${seoimage}`;
+  const { siteTitle, siteTitleDefault, siteUrl, siteDescription, hrefLang } =
+    siteMetadata;
+
+  const seo = {
+    title: title || siteTitleDefault,
+    description: description || siteDescription,
+    url: pathname ? `${siteUrl}${pathname}` : location.href,
+    image: `${siteUrl}${seoimage}`,
+  };
 
   return (
     <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={defaultTitle}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: defaultTitle,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        { property: `og:image`, content: image },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
-        },
-        {
-          name: `twitter:title`,
-          content: defaultTitle,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
+      title={title}
+      defaultTitle={siteTitleDefault}
+      titleTemplate={`%s | ${siteTitle}`}
+    >
+      <html lang={hrefLang} />
+      <meta name="description" content={seo.description} />
+      <meta name="image" content={seo.image} />
+      <meta property="og:title" content={seo.title} />
+      <meta property="og:url" content={seo.url} />
+      <meta property="og:description" content={seo.description} />
+      <meta property="og:image" content={seo.image} />
+      <meta property="og:type" content="website" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={seo.title} />
+      <meta name="twitter:url" content={seo.url} />
+      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:image" content={seo.image} />
+      {/* The following meta tag is for demonstration only and can be removed */}
+      {!!process.env.GATSBY_DEMO_STORE && (
+        <meta name="robots" content="noindex, nofollow" />
+      )}
+      {children}
+    </Helmet>
   );
 }
-
-Seo.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-};
-
-Seo.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-};
-
-export default Seo;

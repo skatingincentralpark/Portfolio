@@ -1,10 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Charles Zhao`,
-    description: `Portfolio for Charles Zhao`,
-    author: `Charles Zhao`,
+    siteTitle: `Charles Zhao`,
+    siteTitleDefault: `Charles Zhao`,
     siteUrl: `https://www.nakedlunch.studio`,
+    hrefLang: "en",
+    siteDescription: `Portfolio for Charles Zhao`,
+    author: `Charles Zhao`,
   },
+
   plugins: [
     `gatsby-transformer-remark`,
     "gatsby-plugin-styled-components",
