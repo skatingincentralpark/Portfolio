@@ -1,84 +1,85 @@
-import React from "react";
+import * as React from "react";
+import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
-import { StaticQuery, graphql } from "gatsby";
-import defaultImage from "../../assets/images/seo.png";
+import { useStaticQuery, graphql } from "gatsby";
+import seoimage from "../../assets/images/seo.png";
 
-const Seo = ({ description, title, image, url, author }) => {
+function Seo({ description, lang, meta, title }) {
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+            author
+            siteUrl
+          }
+        }
+      }
+    `
+  );
+
+  const metaDescription = description || site.siteMetadata.description;
+  const defaultTitle = site.siteMetadata?.title;
+  const image = `${site.siteMetadata?.siteUrl}${seoimage}`;
+
   return (
-    <StaticQuery
-      query={detailsQuery}
-      render={(data) => {
-        const metaDescription =
-          description || data.site.siteMetadata.description;
-
-        const metaTitle = title || data.site.siteMetadata.title;
-
-        const metaAuthor = author || data.site.siteMetadata.author;
-
-        const metaUrl = url || data.site.siteMetadata.siteUrl;
-
-        const metaImage = `${data.site.siteMetadata.siteUrl}${defaultImage}`;
-
-        return (
-          <Helmet
-            title={metaTitle}
-            meta={[
-              {
-                name: `description`,
-                content: metaDescription,
-              },
-              {
-                property: `og:title`,
-                content: metaTitle,
-              },
-              {
-                property: `og:url`,
-                content: metaUrl,
-              },
-              {
-                property: `og:image`,
-                content: metaImage,
-              },
-              {
-                property: `og:description`,
-                content: metaDescription,
-              },
-              {
-                property: `og:type`,
-                content: `website`,
-              },
-              {
-                name: `twitter:creator`,
-                content: metaAuthor,
-              },
-              {
-                name: `twitter:title`,
-                content: metaTitle,
-              },
-              {
-                name: `twitter:description`,
-                content: metaDescription,
-              },
-            ]}
-          />
-        );
+    <Helmet
+      htmlAttributes={{
+        lang,
       }}
+      title={defaultTitle}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      meta={[
+        {
+          name: `description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:title`,
+          content: defaultTitle,
+        },
+        {
+          property: `og:description`,
+          content: metaDescription,
+        },
+        { property: `og:image`, content: image },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary`,
+        },
+        {
+          name: `twitter:creator`,
+          content: site.siteMetadata?.author || ``,
+        },
+        {
+          name: `twitter:title`,
+          content: defaultTitle,
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
+      ].concat(meta)}
     />
   );
+}
+
+Seo.defaultProps = {
+  lang: `en`,
+  meta: [],
+  description: ``,
 };
 
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-        image
-        siteUrl
-      }
-    }
-  }
-`;
+Seo.propTypes = {
+  description: PropTypes.string,
+  lang: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.object),
+};
 
 export default Seo;
