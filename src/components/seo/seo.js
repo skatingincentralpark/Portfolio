@@ -1,79 +1,56 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
-import { useLocation } from "@reach/router";
 import { useStaticQuery, graphql } from "gatsby";
-import defaultImage from "../../assets/images/seo.png";
 
-const SEO = () => {
-  const { pathname } = useLocation();
-  const { site } = useStaticQuery(query);
+import seoimage from "../../assets/images/seo.png";
 
-  const { title, description, author, siteUrl } = site.siteMetadata;
+function SEO({ description, title }) {
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+            author
+            siteUrl
+          }
+        }
+      }
+    `
+  );
 
-  const seo = {
-    title: title,
-    description: description,
-    image: `${siteUrl}${defaultImage}`,
-    url: `${siteUrl}${pathname}`,
-  };
+  const metaDescription = description || site.siteMetadata.description;
+  const defaultTitle = site.siteMetadata.title;
+  const image = `${site.siteMetadata.siteUrl}${seoimage}`;
 
   return (
-    <Helmet title={seo.title}>
-      meta=
-      {[
+    <Helmet
+      meta={[
         {
           name: `description`,
-          content: seo.description,
+          content: metaDescription,
         },
         {
           property: `og:title`,
-          content: seo.title,
-        },
-        {
-          property: `og:url`,
-          content: seo.url,
-        },
-        {
-          property: `og:image`,
-          content: seo.image,
+          content: defaultTitle,
         },
         {
           property: `og:description`,
-          content: seo.description,
+          content: site.siteMetadata.description,
         },
         {
           property: `og:type`,
           content: `website`,
         },
         {
-          name: `twitter:creator`,
-          content: author,
-        },
-        {
-          name: `twitter:title`,
-          content: seo.title,
-        },
-        {
-          name: `twitter:description`,
-          content: seo.description,
+          property: "og:image",
+          content: image,
         },
       ]}
-    </Helmet>
+    />
   );
-};
+}
 
 export default SEO;
-
-const query = graphql`
-  query SEO {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-        image
-        siteUrl
-      }
-    }
-  }
-`;

@@ -1,8 +1,8 @@
 import * as React from "react";
 
-import StackedSvg from "../components/landing/StackedSvg";
-
 import SEO from "../components/seo/seo";
+
+import StackedSvg from "../components/landing/StackedSvg";
 
 const HomePage = () => {
   return (

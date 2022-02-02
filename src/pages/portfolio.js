@@ -1,9 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
+import SEO from "../components/seo/seo";
 
 import PortfolioItem from "../components/portfolio/PortfolioItem";
 import { Container } from "../components/styles/sharedStyles/Container.styled";
-import SEO from "../components/seo/seo";
 
 const PortfolioPage = (props) => {
   const {
@@ -13,19 +13,17 @@ const PortfolioPage = (props) => {
   } = props;
 
   return (
-    <>
+    <Container>
       <SEO />
-      <Container>
-        {edges.map(({ node: { frontmatter, html } }, i) => (
-          <PortfolioItem
-            key={i}
-            frontmatter={frontmatter}
-            html={html}
-            delay={i * 100}
-          />
-        ))}
-      </Container>
-    </>
+      {edges.map(({ node: { frontmatter, html } }, i) => (
+        <PortfolioItem
+          key={i}
+          frontmatter={frontmatter}
+          html={html}
+          delay={i * 100}
+        />
+      ))}
+    </Container>
   );
 };
 
