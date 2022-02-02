@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
-import socialBanner from "../../assets/images/seo/seo.png";
+import seoimage from "../../assets/images/seo.png";
 
-function SEO({ description, lang, meta, image: metaImage, title }) {
+function SEO({ description, title }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -21,16 +21,20 @@ function SEO({ description, lang, meta, image: metaImage, title }) {
     `
   );
 
+  const metaDescription = description || site.siteMetadata.description;
+  const defaultTitle = site.siteMetadata.title;
+  const image = `${site.siteMetadata.siteUrl}${seoimage}`;
+
   return (
     <Helmet
       meta={[
         {
           name: `description`,
-          content: site.siteMetadata.description,
+          content: metaDescription,
         },
         {
           property: `og:title`,
-          content: site.siteMetadata.title,
+          content: defaultTitle,
         },
         {
           property: `og:description`,
@@ -42,7 +46,7 @@ function SEO({ description, lang, meta, image: metaImage, title }) {
         },
         {
           property: "og:image",
-          content: site.siteMetadata.siteUrl + socialBanner,
+          content: image,
         },
       ]}
     />

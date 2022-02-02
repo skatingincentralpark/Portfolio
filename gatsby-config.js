@@ -4,6 +4,7 @@ module.exports = {
     title: "Charles Zhao",
     description: "Portfolio for Charles Zhao",
     author: "Charles Zhao",
+    image: "/seo.png",
   },
   plugins: [
     `gatsby-transformer-remark`,

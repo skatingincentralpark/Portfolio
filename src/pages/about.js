@@ -1,5 +1,7 @@
 import React from "react";
 
+import Seo from "../components/seo/seo";
+
 import Resume from "../assets/pdf/CharlesZhao_Resume_Web.pdf";
 
 import { AboutContainer } from "../components/styles/sharedStyles/Container.styled";
@@ -17,6 +19,7 @@ const AboutPage = () => {
       data-sal-delay="0"
       data-sal-easing="ease"
     >
+      <Seo />
       <p>
         Charles Zhao
         <br />
