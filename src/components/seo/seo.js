@@ -13,7 +13,7 @@ const SEO = () => {
   const seo = {
     title: title,
     description: description,
-    image: `${data.site.siteMetadata.siteUrl}${defaultImage}`,
+    image: `${siteUrl}${defaultImage}`,
     url: `${siteUrl}${pathname}`,
   };
 
