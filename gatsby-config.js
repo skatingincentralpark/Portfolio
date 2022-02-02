@@ -11,6 +11,7 @@ module.exports = {
   plugins: [
     `gatsby-transformer-remark`,
     "gatsby-plugin-styled-components",
+    `gatsby-plugin-react-helmet`,
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
@@ -40,7 +41,7 @@ module.exports = {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
         threshold: 0, // Percentage of an element's area that needs to be visible to launch animation
-        once: true, // Defines if animation needs to be launched once
+        once: true, // Defines if animation needs to be launche d once
         //   disable: false, // Flag for disabling animations
 
         //   // Advanced Options
