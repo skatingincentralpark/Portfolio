@@ -1,6 +1,6 @@
 import React from "react";
 
-import SEO from "../components/seo/seo";
+import Seo from "../components/seo/seo";
 
 import Resume from "../assets/pdf/CharlesZhao_Resume_Web.pdf";
 
@@ -19,7 +19,7 @@ const AboutPage = () => {
       data-sal-delay="0"
       data-sal-easing="ease"
     >
-      <SEO />
+      <Seo />
       <p>
         Charles Zhao
         <br />

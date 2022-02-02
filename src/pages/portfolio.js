@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import SEO from "../components/seo/seo";
+import Seo from "../components/seo/seo";
 
 import PortfolioItem from "../components/portfolio/PortfolioItem";
 import { Container } from "../components/styles/sharedStyles/Container.styled";
@@ -14,7 +14,7 @@ const PortfolioPage = (props) => {
 
   return (
     <Container>
-      <SEO />
+      <Seo />
       {edges.map(({ node: { frontmatter, html } }, i) => (
         <PortfolioItem
           key={i}
