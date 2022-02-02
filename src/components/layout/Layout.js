@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyles from "../../themes/global";
 import Header from "../header/Header";
 
-import Seo from "../seo/Seo";
+import SEO from "../seo/Seo";
 
 const theme = {
   font: {
@@ -37,7 +37,7 @@ const theme = {
 const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
-      <Seo />
+      <SEO />
       <GlobalStyles />
       <Header />
       <main>{children}</main>
