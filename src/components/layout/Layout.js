@@ -4,8 +4,6 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyles from "../../themes/global";
 import Header from "../header/Header";
 
-import SEO from "../seo/Seo";
-
 const theme = {
   font: {
     main: "Helvetica, Courier New, monospace",
@@ -37,7 +35,6 @@ const theme = {
 const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
-      <SEO />
       <GlobalStyles />
       <Header />
       <main>{children}</main>
