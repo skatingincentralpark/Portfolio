@@ -1,7 +1,9 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "Charles Zhao Portfolio",
+    siteUrl: "https://www.nakedlunch.studio",
+    title: "Charles Zhao",
+    description: "Portfolio for Charles Zhao",
+    author: "Charles Zhao",
   },
   plugins: [
     `gatsby-transformer-remark`,

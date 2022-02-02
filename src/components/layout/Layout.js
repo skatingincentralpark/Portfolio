@@ -1,6 +1,8 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 
+import SEO from "../seo/seo";
+
 import GlobalStyles from "../../themes/global";
 import Header from "../header/Header";
 
@@ -36,6 +38,7 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
+      <SEO />
       <Header />
       <main>{children}</main>
     </ThemeProvider>
