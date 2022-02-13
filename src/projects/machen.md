@@ -1,7 +1,7 @@
 ---
 title: Machen (WIP)
 category: Note/Habit App
-description: Using NextJS, I wanted to learn about using SSR, SSG and CSR.  Another focus was improving CSS abilities and improving my ability to follow documentation of different APIs (DraftJS and Firebase).
+description: Using NextJS, I wanted to learn about using SSR, SSG and CSR.  Another focus was improving CSS and my ability to follow documentation for different APIs (DraftJS and Firebase).
 techStack: NextJS, Firebase, styled-components
 image: ../assets/images/project4.png
 image2: ../assets/images/test.png
