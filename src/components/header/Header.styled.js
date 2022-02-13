@@ -83,7 +83,7 @@ export const Logo = styled.div`
     }
   }
   & span:nth-child(2) {
-    font-family: ${({ theme }) => theme.font.mono};
+    font-family: ${({ theme }) => theme.font.main};
     display: none;
 
     @media (min-width: ${({ theme }) => theme.mobile}) {

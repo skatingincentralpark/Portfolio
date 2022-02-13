@@ -5,9 +5,9 @@ import {
   ItemDetails,
   GradientText,
   AccordionItem,
+  NoteText,
 } from "./PortfolioItem.styled";
 import { FlexSpaceBetween } from "../styles/sharedStyles/Flex.styled";
-import { StyledAnchor } from "../styles/sharedStyles/Link.styled";
 import { PlainButton } from "../styles/sharedStyles/Button.styled";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
@@ -40,6 +40,7 @@ const PortfolioItem = ({ frontmatter, delay, html }) => {
             </a>
             <small>{frontmatter.category}</small>
           </FlexSpaceBetween>
+          {frontmatter.note && <NoteText>{frontmatter.note}</NoteText>}
           <p>{frontmatter.description}</p>
           <AccordionItem
             accOpen={accOpen}

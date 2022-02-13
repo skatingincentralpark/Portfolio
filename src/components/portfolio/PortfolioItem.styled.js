@@ -164,3 +164,7 @@ export const GradientText = styled.small`
     }
   }
 `;
+
+export const NoteText = styled.p`
+  color: violet !important;
+`;

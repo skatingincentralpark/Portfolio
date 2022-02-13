@@ -1,7 +1,8 @@
 ---
 title: Homeland
 category: Social Media App
-description: A project I made to learn how to create a fullstack web-app.  With the MERN stack, I implemented many key features that I believe make up a social media application.
+note: First load will be slow due to Heroku sleeping the dyno
+description: A social media web app I made to learn how to create a fullstack project.
 techStack: MERN (MongoDB, Express, React, Node)
 image: ../assets/images/project3.png
 image2: ../assets/images/test.png
