@@ -3,7 +3,6 @@ import { FlexSpaceBetween } from "../styles/sharedStyles/Flex.styled";
 
 export const StyledPortfolioItem = styled(FlexSpaceBetween)`
   flex-wrap: wrap;
-  gap: 2rem;
   justify-content: start;
   align-items: ${(props) => (props.accOpen ? "start" : "center")};
   margin-bottom: 3rem;
@@ -30,7 +29,6 @@ export const StyledPortfolioItem = styled(FlexSpaceBetween)`
   }
 
   @media (min-width: ${({ theme }) => theme.mobile}) {
-    gap: 2rem;
     margin-bottom: 2rem;
     padding-bottom: ${(props) => (props.accOpen ? "2rem" : "none")};
   }
@@ -69,6 +67,7 @@ export const StyledImage = styled.div`
   & img {
     width: 100%;
     background: #bfbfbf;
+    border-radius: 1em;
   }
 
   @media (min-width: ${({ theme }) => theme.mobile}) {
@@ -79,6 +78,8 @@ export const StyledImage = styled.div`
 export const ItemDetails = styled.div`
   width: 100%;
   margin-right: 0;
+  margin-top: 2rem;
+  margin-left: 0;
 
   & h2 {
     border-radius: 4px;
@@ -103,6 +104,8 @@ export const ItemDetails = styled.div`
 
   @media (min-width: ${({ theme }) => theme.mobile}) {
     width: 300px;
+    margin-left: 2rem;
+    margin-top: 0;
   }
 `;
 
