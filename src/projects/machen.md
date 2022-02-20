@@ -9,4 +9,4 @@ url: https://machen.vercel.app/
 order: 04
 ---
 
-With Firebase I am able to focus on building a unique UI with styled-components. DraftJS was used as the rich text editor, with react-transition-group to handle some animations.
+With Firebase I was able to focus on building a unique UI with styled-components. DraftJS was used as a rich text editor, with react-transition-group to handle some animations.
