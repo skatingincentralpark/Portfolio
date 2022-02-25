@@ -48,6 +48,14 @@ const AboutPage = () => {
       >
         Github
       </StyledAnchor>
+      <StyledAnchor
+        href="https://au.linkedin.com/in/charleszhao1645"
+        target="_blank"
+        rel="noreferrer"
+        id="email"
+      >
+        Linkedin
+      </StyledAnchor>
     </AboutContainer>
   );
 };
