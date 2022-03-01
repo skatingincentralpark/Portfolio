@@ -4,7 +4,6 @@ category: Note/Habit App
 description: Using NextJS, I wanted to learn about using SSR, SSG and CSR.  Another focus was improving CSS and my ability to follow documentation for different APIs (DraftJS and Firebase).
 techStack: NextJS, Firebase, styled-components
 image: ../assets/images/project4.png
-image2: ../assets/images/test.png
 url: https://machen.vercel.app/
 order: 04
 ---

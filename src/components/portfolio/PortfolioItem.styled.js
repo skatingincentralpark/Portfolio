@@ -9,6 +9,7 @@ export const StyledPortfolioItem = styled(FlexSpaceBetween)`
   border-bottom: ${(props) =>
     props.accOpen ? "1px dashed lightgray" : "none"};
   padding-bottom: ${(props) => (props.accOpen ? "2rem" : "none")};
+  /* flex-direction: column; */
 
   & a,
   & button {
@@ -71,7 +72,8 @@ export const StyledImage = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.mobile}) {
-    width: 400px;
+    width: 100%;
+    max-width: 40rem;
   }
 `;
 
@@ -80,6 +82,7 @@ export const ItemDetails = styled.div`
   margin-right: 0;
   margin-top: 2rem;
   margin-left: 0;
+  flex-grow: 1;
 
   & h2 {
     border-radius: 4px;
@@ -103,7 +106,8 @@ export const ItemDetails = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.mobile}) {
-    width: 300px;
+    width: 100px;
+    max-width: 300px;
     margin-left: 2rem;
     margin-top: 0;
   }
@@ -166,5 +170,6 @@ export const GradientText = styled.small`
 `;
 
 export const NoteText = styled.p`
-  color: violet !important;
+  /* color: darkblue !important; */
+  font-style: oblique;
 `;

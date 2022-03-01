@@ -4,8 +4,8 @@ category: Social Media App
 note: First load will be slow due to Heroku sleeping the dyno
 description: A social media web app I made to learn how to create a fullstack project.
 techStack: MERN (MongoDB, Express, React, Node)
-image: ../assets/images/project3.png
-image2: ../assets/images/test.png
+imageGif: ../assets/images/homeland.gif
+# image: ../assets/images/project3.png
 url: https://dry-caverns-40340.herokuapp.com/
 order: 03
 ---

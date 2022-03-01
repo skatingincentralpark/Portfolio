@@ -3,8 +3,8 @@ title: Nuan Ho
 category: Portfolio
 description: A portfolio site I designed and developed for Sydney-based artist, Nuan Ho.
 techStack: Gatsby (React), Graphql, NetlifyCMS
-image: ../assets/images/project2.png
-image2: ../assets/images/test.png
+imageGif: ../assets/images/nuan.gif
+# image: ../assets/images/project2.png
 url: https://www.nuanhoart.com/
 order: 02
 ---

@@ -13,8 +13,13 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const PortfolioItem = ({ frontmatter, delay, html }) => {
   const [accOpen, setAccOpen] = useState(false);
-
-  const image = getImage(frontmatter.image);
+  const [displayImage, setDisplayImage] = useState(() => {
+    if (!!frontmatter.image) {
+      return getImage(frontmatter.image);
+    } else {
+      return frontmatter.imageGif.publicURL;
+    }
+  });
 
   const toggleAccordionHandler = () => {
     setAccOpen(!accOpen);
@@ -30,7 +35,15 @@ const PortfolioItem = ({ frontmatter, delay, html }) => {
       <StyledPortfolioItem row accOpen={accOpen}>
         <a href={frontmatter.url} target="_blank" rel="noreferrer">
           <StyledImage>
-            <GatsbyImage image={image} alt="Project thumbnail" />
+            {!!frontmatter.image ? (
+              <GatsbyImage image={displayImage} alt="Project thumbnail" />
+            ) : (
+              <img
+                src={displayImage}
+                alt="Project thumbnail"
+                style={{ display: "flex" }}
+              />
+            )}
           </StyledImage>
         </a>
         <ItemDetails>
