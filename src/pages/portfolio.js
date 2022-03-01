@@ -46,9 +46,6 @@ export const query = graphql`
                 gatsbyImageData(placeholder: NONE, formats: [AUTO, WEBP, AVIF])
               }
             }
-            imageGif {
-              publicURL
-            }
           }
           html
         }
