@@ -6,7 +6,7 @@ description: A social media web app I made to learn how to create a fullstack pr
 techStack: MERN (MongoDB, Express, React, Node)
 image: ../assets/images/project3.png
 imageGif: ../assets/images/homeland.gif
-url: https://dry-caverns-40340.herokuapp.com/
+url: https://homeland-v1.herokuapp.com/
 order: 03
 ---
 
